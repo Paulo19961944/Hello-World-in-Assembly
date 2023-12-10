@@ -1,12 +1,12 @@
 section	.text
 	global _start       ;deve ser declarado para usar gcc
 _start:                     ;inicia o programa
-	mov	edx, len    ;tamanho da mensagem
-	mov	ecx, msg    ;printa a mensagem na tela
-	mov	ebx, 1	    ;descrição do arquivo
-	mov	eax, 4	    ;(sys_write)
+	mov	edx, len    ;move len para o registrador edx
+	mov	ecx, msg    ;move a mensagem para o registrador ecx
+	mov	ebx, 1	    ;move o valor 1 para o registrador ebx
+	mov	eax, 4	    ;move o valor 4 para o registrador eax
 	int	0x80        ;chama o kernel
-	mov	eax, 1	    ;(sys_exit)
+	mov	eax, 1	    ;move o valor 1 para o registrador eax
 	int	0x80        ;chama o kernel
 
 section	.data
